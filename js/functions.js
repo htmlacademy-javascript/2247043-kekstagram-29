@@ -1,6 +1,6 @@
 const checkString = (str, lettersLimit) => str.length <= lettersLimit;
 
-console.log(checkString('проверяемая строка', 20));
+// console.log(checkString('проверяемая строка', 20));
 
 const isPalindrome = (str) => {
   const editedStr = str.replaceAll(' ', '').toLowerCase();
@@ -13,7 +13,7 @@ const isPalindrome = (str) => {
 
   return editedStr === newStr;
 };
-console.log(isPalindrome('Лёша на полке клопа нашёл ') ? 'Палиндром' : 'Не палиндром');
+// console.log(isPalindrome('Лёша на полке клопа нашёл ') ? 'Палиндром' : 'Не палиндром');
 
 const returnIntegers = (str) => {
     let newString = '';
@@ -27,10 +27,10 @@ const returnIntegers = (str) => {
   return parseInt(newString, 10);
 };
 
-console.log(returnIntegers('2023 год'));
-console.log(returnIntegers('ECMAScript 2022'));
-console.log(returnIntegers('1 кефир, 0.5 батона'));
-console.log(returnIntegers('агент 007'));
-console.log(returnIntegers(2013));
-console.log(returnIntegers(-1));
-console.log(returnIntegers(1.5));
+// console.log(returnIntegers('2023 год'));
+// console.log(returnIntegers('ECMAScript 2022'));
+// console.log(returnIntegers('1 кефир, 0.5 батона'));
+// console.log(returnIntegers('агент 007'));
+// console.log(returnIntegers(2013));
+// console.log(returnIntegers(-1));
+// console.log(returnIntegers(1.5));
