@@ -1,6 +1,6 @@
 const checkString = (str, lettersLimit) => str.length <= lettersLimit;
 
-(checkString('проверяемая строка', 20));
+checkString('проверяемая строка', 20);
 
 const isPalindrome = (str) => {
   const editedStr = str.replaceAll(' ', '').toLowerCase();
@@ -13,7 +13,8 @@ const isPalindrome = (str) => {
 
   return editedStr === newStr;
 };
-isPalindrome('Лёша на полке клопа нашёл ') ? 'Палиндром' : 'Не палиндром');
+// eslint-disable-next-line no-constant-condition
+isPalindrome(('Лёша на полке клопа нашёл ') ? 'Палиндром' : 'Не палиндром');
 
 const returnIntegers = (str) => {
   let newString = '';
