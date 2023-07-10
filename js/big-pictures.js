@@ -75,3 +75,4 @@ const openModal = (photo) => {
 };
 
 export { openModal };
+
