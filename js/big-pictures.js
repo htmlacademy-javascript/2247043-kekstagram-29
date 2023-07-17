@@ -7,17 +7,16 @@ const modalComments = modal.querySelector('.social__comments');
 const modalCommentTemplate = modal.querySelector('.social__comment');
 const modalButtonLoader = modal.querySelector('.social__comments-loader');
 const modalStatistic = modal.querySelector('.social__comment-count');
+const outsideModal = document.querySelector('.overlay');
 
 const commentsList = [];
 let commentsTotal;
 
-
-const closeModal = () => {
-  modal.classList.add('hidden');
-};
-
-closeModalButton.addEventListener('click', () => {
-  closeModal();
+document.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Escape') {
+    evt.preventDefault();
+    modal.classList.add('hidden');
+  }
 });
 
 const showModal = () => {
@@ -72,7 +71,32 @@ const openModal = (photo) => {
   commentsList.length = 0;
   commentsList.push(...photo.comments.slice());
   renderModal(photo);
+  document.addEventListener('keydown', onClickEsc);
+  outsideModal.addEventListener('click', onClickOutside);
 };
+
+const closeModal = () => {
+  modal.classList.add('hidden');
+  document.removeEventListener('keydown', onClickEsc);
+  outsideModal.removeEventListener('click', onClickOutside);
+};
+
+closeModalButton.addEventListener('click', () => {
+  closeModal();
+});
+
+
+function onClickEsc(evt) {
+  if (evt.key === 'Escape') {
+    closeModal();
+  }
+}
+
+function onClickOutside(evt) {
+  if (evt.target.classList.contains('overlay')) {
+    closeModal();
+  }
+}
 
 export { openModal };
 
