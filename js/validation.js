@@ -43,7 +43,7 @@ pristine.addValidator(
 
 const validateHashtsg = (value) => {
   const tags = getTagsArray(value);
-  return !tags.some((tag) => !HASHTAG_SYMBOLS.test(tag));
+  return !value.length ? true : !tags.some((tag) => !HASHTAG_SYMBOLS.test(tag));
 };
 
 pristine.addValidator(
@@ -62,7 +62,7 @@ const validateUniqueHashtag = (value) => {
   const tags = getTagsArray(value);
   const uniqueTags = [... new Set(tags)];
   return tags.length === uniqueTags.length;
-}
+};
 
 pristine.addValidator(
   uploadFormHashtags,
@@ -70,7 +70,7 @@ pristine.addValidator(
   'один и тот же хэш-тег не может быть использован дважды',
   1,
   true
-)
+);
 
 const validateForm = () => pristine.validate();
 
