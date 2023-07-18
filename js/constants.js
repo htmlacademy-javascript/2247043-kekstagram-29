@@ -16,6 +16,10 @@ const MAX_HASHTAGS_VOLUME = 5;
 const MAX_HASHTAGS_LENGTH = 20;
 const HASHTAG_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
 
+const SCALE_STEP = 25;
+const SCALE_MIN = 25;
+const SCALE_MAX = 100;
+
 const DESCRIPTIONS = [
   'утро',
   'созвон',
@@ -52,5 +56,8 @@ export {
   MAX_DESCRIPTION_LENGTH,
   MAX_HASHTAGS_VOLUME,
   HASHTAG_SYMBOLS,
-  MAX_HASHTAGS_LENGTH
+  MAX_HASHTAGS_LENGTH,
+  SCALE_STEP,
+  SCALE_MIN,
+  SCALE_MAX
 };
