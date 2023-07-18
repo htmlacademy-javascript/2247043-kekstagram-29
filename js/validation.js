@@ -43,7 +43,7 @@ pristine.addValidator(
 
 const validateHashtsg = (value) => {
   const tags = getTagsArray(value);
-  return !tags.some((tag) => !HASHTAG_SYMBOLS.test(tag));
+  return !value.length ? true : !tags.some((tag) => !HASHTAG_SYMBOLS.test(tag));
 };
 
 pristine.addValidator(
