@@ -12,13 +12,6 @@ const outsideModal = document.querySelector('.overlay');
 const commentsList = [];
 let commentsTotal;
 
-document.addEventListener('keydown', (evt) => {
-  if (evt.key === 'Escape') {
-    evt.preventDefault();
-    modal.classList.add('hidden');
-  }
-});
-
 const showModal = () => {
   modal.classList.remove('hidden');
 };

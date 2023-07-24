@@ -20,6 +20,13 @@ const SCALE_STEP = 25;
 const SCALE_MIN = 25;
 const SCALE_MAX = 100;
 
+const POST_DATA_URL = 'https://28.javascript.pages.academy/kekstagram';
+
+const submitButtonText = {
+  IDLE: 'Опубликовать',
+  SUBMITING: 'Публикую...'
+};
+
 const DESCRIPTIONS = [
   'утро',
   'созвон',
@@ -59,5 +66,7 @@ export {
   MAX_HASHTAGS_LENGTH,
   SCALE_STEP,
   SCALE_MIN,
-  SCALE_MAX
+  SCALE_MAX,
+  POST_DATA_URL,
+  submitButtonText
 };
