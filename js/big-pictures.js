@@ -25,7 +25,7 @@ const renderComment = (comment) => {
 };
 
 const renderCommentsStatistic = () => {
-  modalStatistic.innerHTML = `${commentsTotal - commentsList.length} из <span class="comments-count">${commentsTotal}</span> комментариев`
+  modalStatistic.innerHTML = `${commentsTotal - commentsList.length} из <span class="comments-count">${commentsTotal}</span> комментариев`;
 };
 
 const renderButtonLoader = () => {
@@ -66,6 +66,7 @@ const openModal = (photo) => {
   renderModal(photo);
   document.addEventListener('keydown', onClickEsc);
   outsideModal.addEventListener('click', onClickOutside);
+  document.body.classList.add('modal-open');
 };
 
 const closeModal = () => {

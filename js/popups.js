@@ -3,13 +3,8 @@ import { onClickFormEsc } from './form.js';
 const successTemplate = document.querySelector('#success').content.querySelector('.success');
 const errorTemplate = document.querySelector('#error').content.querySelector('.error');
 
-const closePopupSuccess = () => {
-  document.querySelector('.success').remove();
-  deleteListener();
-};
-
-const closePopupError = () => {
-  document.querySelector('.error').remove();
+const closePopup = () => {
+  document.querySelector('.popup').remove();
   deleteListener();
   document.addEventListener('keydown', onClickFormEsc);
 };
@@ -17,37 +12,30 @@ const closePopupError = () => {
 const showSuccessPopup = () => {
   const successPopupElement = successTemplate.cloneNode(true);
   document.body.append(successPopupElement);
+  successPopupElement.classList.add('popup');
   const successButton = document.querySelector('.success__button');
-  successButton.addEventListener('click', closePopupSuccess);
+  successButton.addEventListener('click', closePopup);
   hangListener();
 };
 
 const showErrorPopup = () => {
   const errorPopupElement = errorTemplate.cloneNode(true);
   document.body.append(errorPopupElement);
+  errorPopupElement.classList.add('popup');
   const errorButton = document.querySelector('.error__button');
-  errorButton.addEventListener('click', closePopupError);
+  errorButton.addEventListener('click', closePopup);
   hangListener();
 };
 
 function onClickEsc(evt) {
   if (evt.key === 'Escape') {
-    if (document.querySelector('.error')) {
-      closePopupError();
-    }
-    if (document.querySelector('.success')) {
-      closePopupSuccess();
-    }
+    closePopup();
   }
 }
 
 function onClickOutside(evt) {
-  if (evt.target.classList.contains('error')) {
-    closePopupError();
-
-  }
-  if (evt.target.classList.contains('success')) {
-    closePopupSuccess();
+  if (evt.target.classList.contains('popup')) {
+    closePopup();
   }
 }
 
@@ -65,4 +53,3 @@ export {
   showSuccessPopup,
   showErrorPopup
 };
-
