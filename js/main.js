@@ -1,7 +1,11 @@
-import { getPhotos } from './data.js';
-import { PHOTOS } from './constants.js';
+import { getPhotos } from './api.js';
 import { renderThumbnail } from './thumbnail.js';
-
 import './form.js';
 
-renderThumbnail(getPhotos(PHOTOS));
+getPhotos()
+  .then((photos) => {
+    renderThumbnail(photos);
+  });
+
+// почистить ненужные константы в constants
+

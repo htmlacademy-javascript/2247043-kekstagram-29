@@ -12,13 +12,6 @@ const outsideModal = document.querySelector('.overlay');
 const commentsList = [];
 let commentsTotal;
 
-document.addEventListener('keydown', (evt) => {
-  if (evt.key === 'Escape') {
-    evt.preventDefault();
-    modal.classList.add('hidden');
-  }
-});
-
 const showModal = () => {
   modal.classList.remove('hidden');
 };
@@ -32,7 +25,7 @@ const renderComment = (comment) => {
 };
 
 const renderCommentsStatistic = () => {
-  modalStatistic.innerHTML = `${commentsTotal - commentsList.length} из <span class="comments-count">${commentsTotal}</span> комментариев`
+  modalStatistic.innerHTML = `${commentsTotal - commentsList.length} из <span class="comments-count">${commentsTotal}</span> комментариев`;
 };
 
 const renderButtonLoader = () => {
@@ -73,6 +66,7 @@ const openModal = (photo) => {
   renderModal(photo);
   document.addEventListener('keydown', onClickEsc);
   outsideModal.addEventListener('click', onClickOutside);
+  document.body.classList.add('modal-open');
 };
 
 const closeModal = () => {
