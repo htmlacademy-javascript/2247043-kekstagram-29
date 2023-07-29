@@ -7,5 +7,4 @@ getPhotos()
     setFilters(photos);
   });
 
-// почистить ненужные константы в constants
 
