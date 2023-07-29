@@ -1,10 +1,10 @@
 import { getPhotos } from './api.js';
-import { renderThumbnail } from './thumbnail.js';
 import './form.js';
+import { setFilters } from './filter.js';
 
 getPhotos()
   .then((photos) => {
-    renderThumbnail(photos);
+    setFilters(photos);
   });
 
 // почистить ненужные константы в constants

@@ -1,15 +1,3 @@
-const PHOTOS = 25;
-
-const MIN_LIKES = 0;
-const MAX_LIKES = 999;
-
-const MIN_COMMENTS = 0;
-const MAX_COMMENTS = 10;
-
-const COMMENTS = 5000;
-
-const MIN_AVATAR = 1;
-const MAX_AVATAR = 6;
 
 const MAX_DESCRIPTION_LENGTH = 140;
 const MAX_HASHTAGS_VOLUME = 5;
@@ -20,51 +8,23 @@ const SCALE_STEP = 25;
 const SCALE_MIN = 25;
 const SCALE_MAX = 100;
 
-const POST_DATA_URL = 'https://28.javascript.pages.academy/kekstagram';
-const GET_DATA_URL = 'https://28.javascript.pages.academy/kekstagram/data';
+const POST_DATA_URL = 'https://29.javascript.pages.academy/kekstagram';
+const GET_DATA_URL = 'https://29.javascript.pages.academy/kekstagram/data';
 
 const ALERT_SHOW_TIME = 5000;
 
 const SHOW_ALERT_TEXT = 'Что-то пошло не так';
+
+const RANDOM_PHOTOS_VALUE = 10;
+
+const TIMEOUT_DELAY = 500;
 
 const submitButtonText = {
   IDLE: 'Опубликовать',
   SUBMITING: 'Публикую...'
 };
 
-const DESCRIPTIONS = [
-  'утро',
-  'созвон',
-  'котик',
-  'пёсик',
-  'снег'
-];
-
-const MESSAGES = [
-  'В целом всё неплохо. Но не всё.',
-  'В целом всё плохо.'
-];
-
-const NAMES = [
-  'Виктория',
-  'Иван',
-  'Вадим',
-  'Елена',
-  'Кирилл'
-];
-
 export {
-  PHOTOS,
-  MIN_LIKES,
-  MAX_LIKES,
-  MIN_COMMENTS,
-  MAX_COMMENTS,
-  COMMENTS,
-  MIN_AVATAR,
-  MAX_AVATAR,
-  DESCRIPTIONS,
-  MESSAGES,
-  NAMES,
   MAX_DESCRIPTION_LENGTH,
   MAX_HASHTAGS_VOLUME,
   HASHTAG_SYMBOLS,
@@ -76,5 +36,7 @@ export {
   submitButtonText,
   GET_DATA_URL,
   ALERT_SHOW_TIME,
-  SHOW_ALERT_TEXT
+  SHOW_ALERT_TEXT,
+  RANDOM_PHOTOS_VALUE,
+  TIMEOUT_DELAY
 };

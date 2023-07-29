@@ -4,7 +4,14 @@ const pictureTemplate = document.querySelector('#picture').content.querySelector
 const pictureContainer = document.querySelector('.pictures');
 const pictureFragment = document.createDocumentFragment();
 
+const clearContainer = () => {
+  document.querySelectorAll('.picture').forEach((item) => {
+    item.remove();
+  });
+};
+
 const renderThumbnail = (pictures) => {
+  clearContainer();
   pictures.forEach((element) => {
     const pictureElement = pictureTemplate.cloneNode(true);
     pictureElement.dataset.id = element.id;
@@ -21,7 +28,7 @@ const renderThumbnail = (pictures) => {
       const id = evt.target.closest('.picture').dataset.id * 1;
       openModal(pictures.find((item) => item.id === id));
     }
-  })
+  });
 };
 
 export { renderThumbnail };
