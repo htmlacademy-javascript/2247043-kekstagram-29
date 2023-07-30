@@ -47,14 +47,10 @@ const closeModal = () => {
   uploadOverlay.removeEventListener('click', onClickOutside);
 };
 
-const disabledSubmitButton = () => {
-  submitButton.textContent = submitButtonText.SUBMITING;
-  submitButton.disabled = true;
-};
 
-const enableSubmitButton = () => {
-  submitButton.textContent = submitButtonText.IDLE;
-  submitButton.disabled = false;
+const disabledSubmitButton = (isDisabled = true) => {
+  submitButton.disabled = isDisabled;
+  submitButton.textContent = isDisabled ? submitButtonText.SUBMITING : submitButtonText.IDLE;
 };
 
 uploadForm.addEventListener('submit', (evt) => {
@@ -78,7 +74,7 @@ uploadForm.addEventListener('submit', (evt) => {
         document.removeEventListener('keydown', onClickFormEsc);
       })
       .finally(() => {
-        enableSubmitButton();
+        disabledSubmitButton(false);
       });
   }
 });
