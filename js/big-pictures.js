@@ -73,6 +73,7 @@ const closeModal = () => {
   modal.classList.add('hidden');
   document.removeEventListener('keydown', onClickEsc);
   outsideModal.removeEventListener('click', onClickOutside);
+  document.body.classList.remove('modal-open');
 };
 
 closeModalButton.addEventListener('click', () => {
